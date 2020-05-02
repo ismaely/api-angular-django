@@ -1,0 +1,86 @@
+<app-home>
+</app-home>
+
+<div class="container">
+    <br>
+
+    <div class="row">
+        <div class="col s12 m12">
+
+            <div class="card-panel  darken-1">
+                <div class="card-content black-text">
+                    <span class="card-title">CADASTRO  DE UTENTE</span>
+                </div>
+                <form class="" #dadosForm="ngForm" (ngSubmit)="adiacionar_pessoa(dadosForm)">
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input type="text" ngModel #nome="ngModel" name="nome" pattern="[a-zA-Z ]*">
+                            <label for="first_name">Name</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input type="text" ngModel #morada="ngModel" name="morada">
+                            <label for="first_name">Morada</label>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <label for="">Genero</label> <br>
+                            <select class="browser-default" ngModel name="genero">
+                                <option *ngFor="let gen of genero" [value]="gen.nome">{{gen.nome}}</option>
+                              </select>
+
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input type="email" ngModel name="email">
+                            <label for="first_name">Email</label>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="last" type="text" ngModel name="telefone">
+                            <label for="last_name">telefone</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input id="last" type="text" ngModel name="id">
+                            <label for="last_name">id</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input type="text" ngModel name="descricao">
+                            <label for="email">Descrição</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="waves-effect waves-light btn">salvar</button>
+
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12">
+            <ul class="collection ">
+                <li class="col s12 m6 collection-item avatar blue lighten-3 " *ngFor="let hero of pessoa">
+
+                    <a href="" class="white-text"> <img src="images/imagem.jpg" alt="" class="circle">
+                        <p>Nome: {{hero.nome}} <br> Morada: {{hero.morada}} <br> Genero: {{hero.genero}}
+                            <br> Email: {{hero.email}} <br> Telefone: {{hero.telefone}}
+                        </p>
+                    </a>
+                </li>
+                <li>
+
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
